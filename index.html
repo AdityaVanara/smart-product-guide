@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Product Comparison Guide – Design Thinking Project</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap"><b>Smart Product Guide</b><a href="#problem">Problem</a><a href="#survey">Survey</a><a href="#tool">Try the tool</a><a href="#process">Story</a><a href="#feedback">Feedback</a></div></nav>
+
+<header class="hero"><div class="wrap grid">
+<div>
+<h1>Choosing a product online shouldn’t take twelve tabs.</h1>
+<p>A Design Thinking project built from a survey of 57 real online shoppers. See what they told us, then try the comparison guide we designed for them.</p>
+<div class="row"><a class="btn" href="#tool">Try the comparison tool</a><a class="btn alt" href="#survey">See survey results</a></div>
+<div class="tabs"><span>Empathize</span><span>Define</span><span>Ideate</span><span>Prototype</span><span>Test</span></div>
+</div>
+<div class="phone" aria-hidden="true">
+<b style="font-family:Sora,sans-serif">Phones under ₹25,000</b>
+<div class="it"><i>📱</i><div>Product A<small>₹22,499 · 3.9/5</small></div><span class="tag">Lowest price</span></div>
+<div class="it"><i>📱</i><div>Product B<small>₹23,999 · 4.6/5</small></div><span class="tag g">Best match</span></div>
+<div class="it"><i>📱</i><div>Product C<small>₹24,999 · 4.4/5</small></div><span class="tag b">Top rated</span></div>
+</div></div></header>
+
+<section id="problem"><div class="wrap">
+<h2>The problem we found</h2>
+<p class="lead">Customers find it difficult to select the right product because of differences in prices, sellers, and specifications.</p>
+<div class="stats">
+<div class="card stat"><b data-n="89.4">0</b><p>found it hard to choose between similar products (Yes or Sometimes)</p></div>
+<div class="card stat"><b data-n="68.4">0</b><p>delay or cancel a purchase at least sometimes because of confusion</p></div>
+<div class="card stat"><b data-n="54.4">0</b><p>doubt product quality – the biggest difficulty reported</p></div>
+</div></div></section>
+
+<section id="survey" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+<h2>What 57 shoppers told us</h2>
+<p class="lead">Results from our Google Form: 12 questions plus one open question. Mostly students and young, urban shoppers.</p>
+<div class="two">
+<div class="card"><h3>Difficulties while choosing (Q8)</h3><div class="bars" data-bars='[["Quality doubts",54.4],["Different prices",36.8],["Comparing specs",35.1],["Trusting reviews",35.1],["Finding good sellers",33.3],["Photos ≠ product",29.8],["Too many choices",24.6]]'></div></div>
+<div class="card"><h3>Feature that helps most (Q12)</h3><div class="bars" data-y data-bars='[["Reliable reviews",35.1],["Compare specs",17.5],["Details in one place",17.5],["Price comparison",14],["Seller reliability",8.8],["Verified photos",7]]'></div></div>
+<div class="card"><h3>Platforms used (Q6)</h3><div class="bars" data-bars='[["Amazon",84.2],["Flipkart",77.2],["Meesho",31.6],["Myntra",24.6],["Other",19.3]]'></div></div>
+<div class="card"><h3>Who answered</h3><div class="bars" data-y data-bars='[["Male",78.9],["Female",21.1],["Age 18–25",66.7],["Urban",86],["Students",36.8],["Employed",31.6]]'></div></div>
+</div>
+<p class="lead" style="margin-top:22px"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd1flAYAtF7DxadZ98j7Fkt31_VC7S827M2ePuD9PZtyzNhkw/viewform" target="_blank" rel="noopener">Open the original Google Form</a></p>
+</div></section>
+
+<section id="tool"><div class="wrap">
+<h2>Try the Smart Product Comparison Guide</h2>
+<p class="lead">This is our prototype. Set a budget, pick up to three phones and compare them side by side. Prices and reviews are sample data for the demo. Your shortlist is saved in this browser.</p>
+<div class="tool">
+<div class="card">
+<label for="bud">Budget: <span id="budv"></span></label>
+<input id="bud" type="range" min="10000" max="40000" step="500" value="25000">
+<label for="sort">Sort by</label>
+<select id="sort"><option value="p">Lowest price</option><option value="r">Top rated</option><option value="m">Best match</option></select>
+<label for="q">Search</label>
+<input id="q" type="text" placeholder="Product name">
+<p class="msg" id="shortmsg" style="color:var(--mute)"></p>
+<button class="link" id="clr">Clear shortlist</button>
+</div>
+<div><div class="plist" id="plist"></div>
+<div class="card scroll" id="cmp" style="margin-top:18px" hidden></div></div>
+</div></div></section>
+
+<section id="process" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+<h2>A story from our shoppers</h2>
+<p class="lead" style="font-size:18px;max-width:70ch;margin-top:20px">Imagine a student with a budget of ₹25,000 searching for a new phone. On one app the price is lower, on another the reviews look better, and a third shows a seller she has never heard of. Twelve tabs later she is still unsure, so she closes the app and decides to buy it later.</p>
+<p class="lead" style="font-size:18px;max-width:70ch;margin-top:16px">This is not a rare case. In our survey of 57 shoppers, 68.4% said confusion makes them delay or cancel a purchase at least sometimes, and 54.4% doubt product quality. When we asked what would help most, 35.1% chose more reliable customer reviews.</p>
+<p class="lead" style="font-size:18px;max-width:70ch;margin-top:16px">That is why we put prices, ratings, specs and seller details side by side in one place. But the story does not end here. Your feedback is the next chapter: tell us what worked, what confused you and what you would change.</p>
+</div></section>
+
+<section id="feedback"><div class="wrap">
+<h2>Tell us what you think</h2>
+<p class="lead">Your answer is saved in a local database (your browser’s storage). Nothing leaves your device. You can view, export or delete every entry below.</p>
+<div class="two">
+<div class="card">
+<label for="fn">Name</label><input id="fn" type="text" maxlength="40">
+<label>Rating</label><div class="stars" id="stars" role="radiogroup" aria-label="Rating"></div>
+<label for="ff">Most helpful feature</label>
+<select id="ff"><option>Reliable reviews</option><option>Spec comparison</option><option>Price comparison</option><option>Seller reliability</option><option>All details in one place</option></select>
+<label for="fc">Comment</label><textarea id="fc" maxlength="300"></textarea>
+<div class="row" style="margin-top:16px"><button class="btn" id="save">Save feedback</button></div>
+<p class="msg" id="fmsg"></p>
+</div>
+<div class="card"><div class="row" style="justify-content:space-between;align-items:center"><h3 id="cnt">Saved feedback</h3><div class="row"><button class="link" id="exp">Export CSV</button><button class="link" id="all">Delete all</button></div></div>
+<div id="flist" style="margin-top:14px;display:grid;gap:10px"></div></div>
+</div></div></section>
+
+<footer><div class="wrap">Design Thinking project · B.E. Computer Engineering, J.G. University, Ahmedabad · Prices and reviews shown in the tool are sample data.</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
