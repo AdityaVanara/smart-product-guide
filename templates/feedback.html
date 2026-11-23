@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<section><div class="wrap">
+<h2>Tell us what you think</h2>
+<p class="lead">This is the Test stage of Design Thinking. Your feedback is saved in the SQLite database. You can edit, delete or export every entry.</p>
+<div class="two">
+<form class="card" id="fform">
+<h3 id="ftitle">New feedback</h3>
+<label for="fn">Name</label><input id="fn" type="text" maxlength="40">
+<label>Rating</label><div class="stars" id="stars" role="radiogroup" aria-label="Rating"></div>
+<label for="ff">Most helpful feature</label>
+<select id="ff">{% for f in features %}<option>{{ f }}</option>{% endfor %}</select>
+<label for="fc">Comment</label><textarea id="fc" maxlength="300"></textarea>
+<div class="row" style="margin-top:16px"><button class="btn" type="submit" id="fsave">Save feedback</button><button class="btn alt" type="button" id="fcancel" hidden>Cancel edit</button></div>
+<p class="msg" id="fmsg"></p>
+</form>
+<div class="card">
+<div class="row between"><h3 id="cnt">Saved feedback</h3><div class="row"><a class="link" href="{{ url_for('export_feedback') }}">Export CSV</a><button class="link bad" id="all">Delete all</button></div></div>
+<p class="muted" id="avg" style="margin-top:6px"></p>
+<div class="list" id="flist"></div></div>
+</div>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>{% endblock %}

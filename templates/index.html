@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<header class="hero"><div class="wrap grid">
+<div>
+<h1>Choosing a product online shouldn’t take twelve tabs.</h1>
+<p class="big">Online Shopping Product Selection Problem: a Design Thinking project built from a survey of 57 online shoppers. Compare prices, ratings and specs in one place and get a recommendation you can understand.</p>
+<div class="row"><a class="btn" href="{{ url_for('comparison_page') }}">Compare products</a><a class="btn alt" href="{{ url_for('recommendations_page') }}">Get an AI recommendation</a></div>
+<div class="tabs"><span>Empathize</span><span>Define</span><span>Ideate</span><span>Prototype</span><span>Test</span></div>
+</div>
+<div class="phone" aria-hidden="true">
+<b style="font-family:Sora,sans-serif">Phones under ₹25,000</b>
+<div class="it"><i>📱</i><div>Product A<small>₹22,499 · 3.9/5</small></div><span class="tag">Lowest price</span></div>
+<div class="it"><i>📱</i><div>Product B<small>₹23,999 · 4.6/5</small></div><span class="tag g">Best match</span></div>
+<div class="it"><i>📱</i><div>Product C<small>₹24,999 · 4.4/5</small></div><span class="tag b">Top rated</span></div>
+</div></div></header>
+
+<section id="live" style="padding-top:8px"><div class="wrap">
+<h2>Live from the database</h2>
+<p class="lead">These numbers are read from SQLite every time you open this page.</p>
+<div class="stats" id="live-stats"></div>
+</div></section>
+
+<section id="problem" class="alt-bg"><div class="wrap">
+<h2>The problem we found</h2>
+<p class="lead">Customers find it difficult to select the right product because of differences in prices, sellers, and specifications.</p>
+<div class="stats">
+<div class="card stat"><b data-n="89.4">0</b><p>found it hard to choose between similar products (Yes or Sometimes)</p></div>
+<div class="card stat"><b data-n="68.4">0</b><p>delay or cancel a purchase at least sometimes because of confusion</p></div>
+<div class="card stat"><b data-n="54.4">0</b><p>doubt product quality, the biggest difficulty reported</p></div>
+</div></div></section>
+
+<section id="original-survey"><div class="wrap">
+<h2>What 57 shoppers told us</h2>
+<p class="lead">Results of our original Google Form survey (12 questions plus one open question). These are the published percentages from that form.</p>
+<div class="two">
+<div class="card"><h3>Difficulties while choosing</h3><div class="bars" id="o-diff"></div></div>
+<div class="card"><h3>Feature that helps most</h3><div class="bars" id="o-feat"></div></div>
+<div class="card"><h3>Platforms used</h3><div class="bars" id="o-plat"></div></div>
+<div class="card"><h3>Who answered</h3><div class="bars" id="o-who"></div></div>
+</div>
+<p class="lead" style="margin-top:20px"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd1flAYAtF7DxadZ98j7Fkt31_VC7S827M2ePuD9PZtyzNhkw/viewform" target="_blank" rel="noopener">Open the original Google Form</a></p>
+</div></section>
+
+<section id="process" class="alt-bg"><div class="wrap">
+<h2>Our Design Thinking process</h2>
+<p class="lead">Each stage of the process is a real part of this website, not only a slide.</p>
+<div class="steps">
+<div class="card"><h3>1. Empathize</h3><p>We surveyed shoppers and listened to their frustrations.</p></div>
+<div class="card"><h3>2. Define</h3><p>We turned the answers into one clear problem statement (below) and a list of customer needs.</p></div>
+<div class="card"><h3>3. Ideate</h3><p>We listed ideas: side-by-side comparison, budget filter, seller score, adjusted ratings, simple explanations.</p></div>
+<div class="card"><h3>4. Prototype</h3><p>We built the Smart Product Comparison Guide: <a href="{{ url_for('products_page') }}">products</a>, <a href="{{ url_for('comparison_page') }}">comparison</a> and <a href="{{ url_for('recommendations_page') }}">AI picks</a>.</p></div>
+<div class="card"><h3>5. Test</h3><p>Users rate the guide on the <a href="{{ url_for('feedback_page') }}">Feedback page</a>.</p></div>
+</div>
+
+<div class="two">
+<div class="card">
+<h3>Problem statement</h3>
+<p style="margin-top:10px">Online shoppers who compare products on Amazon, Flipkart and Meesho need a simple way to see prices, ratings, specifications and seller reliability together, because scattered and conflicting information makes them doubt quality, delay purchases or give up.</p>
+<h3 style="margin-top:22px">Customer needs</h3>
+<ul class="reasons" style="margin-top:8px"><li>Reviews they can trust</li><li>Specifications compared in one table</li><li>The lowest price across platforms</li><li>Knowing if the seller is reliable</li><li>A recommendation that explains itself</li></ul>
+</div>
+<div class="card">
+<h3>Idea map</h3>
+<svg class="mindmap" viewBox="0 0 420 300" role="img" aria-label="Mind map of solution ideas">
+<g>
+<line x1="210" y1="150" x2="80" y2="50"/><line x1="210" y1="150" x2="340" y2="50"/>
+<line x1="210" y1="150" x2="70" y2="250"/><line x1="210" y1="150" x2="350" y2="250"/><line x1="210" y1="150" x2="210" y2="30"/>
+</g>
+<rect class="node" x="20" y="32" width="120" height="36" rx="18"/><text x="80" y="55" text-anchor="middle">Price compare</text>
+<rect class="node" x="280" y="32" width="120" height="36" rx="18"/><text x="340" y="55" text-anchor="middle">Spec table</text>
+<rect class="node" x="10" y="232" width="120" height="36" rx="18"/><text x="70" y="255" text-anchor="middle">Seller score</text>
+<rect class="node" x="290" y="232" width="120" height="36" rx="18"/><text x="350" y="255" text-anchor="middle">Budget filter</text>
+<rect class="node" x="150" y="12" width="120" height="36" rx="18"/><text x="210" y="35" text-anchor="middle">Clear reasons</text>
+<rect class="core" x="130" y="125" width="160" height="50" rx="25"/><text x="210" y="155" text-anchor="middle">Easier choice</text>
+</svg>
+</div>
+</div>
+
+<p class="lead" style="font-size:18px;max-width:70ch;margin-top:32px">Imagine a student with a budget of ₹25,000 searching for a new phone. On one app the price is lower, on another the reviews look better, and a third shows a seller she has never heard of. Twelve tabs later she is still unsure, so she closes the app. In our survey, 68.4% said confusion makes them delay or cancel a purchase at least sometimes. That is why we put everything side by side in one place.</p>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/home.js') }}"></script>{% endblock %}

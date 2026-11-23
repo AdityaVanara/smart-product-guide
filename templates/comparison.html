@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Compare{% endblock %}
+{% block content %}
+<section><div class="wrap">
+<h2>Smart Product Comparison Guide</h2>
+<p class="lead">Set a budget, search and sort, then pick up to three products. Your shortlist is saved in the database. Prices and ratings marked Sample are demo data.</p>
+<div class="tool">
+<div class="card">
+<label for="bud">Budget: <span id="budv"></span></label>
+<input id="bud" type="range" min="10000" max="40000" step="500" value="25000">
+<label for="sort">Sort by</label>
+<select id="sort"><option value="price">Lowest price</option><option value="rating">Top rated</option><option value="match">Best match</option></select>
+<label for="q">Search</label>
+<input id="q" type="text" placeholder="Product or brand">
+<p class="msg" id="shortmsg" style="color:var(--mute)"></p>
+<button class="link" id="clr">Clear shortlist</button>
+</div>
+<div><div class="plist" id="plist"></div>
+<div class="card scroll" id="cmp" style="margin-top:18px" hidden></div></div>
+</div>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/comparison.js') }}"></script>{% endblock %}

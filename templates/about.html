@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<section><div class="wrap">
+<h2>About this project</h2>
+<p class="lead" style="max-width:70ch">Customers often find it hard to choose the right product on Amazon, Flipkart and Meesho. Different prices, specifications, reviews, ratings, seller reliability and discounts make decisions slow and stressful. The Smart Product Comparison Guide puts these facts side by side and explains its recommendations.</p>
+<div class="notice">Data notice: products, prices, ratings and demo survey rows marked <b>Sample</b> are demo data. They are not verified live marketplace prices or real customer reviews. Replace them with your own checked data on the Products page.</div>
+
+<h3 style="margin-top:36px">How the five subjects are used</h3>
+<div class="three">
+<div class="card"><h3>Design Thinking</h3><p class="muted" style="margin-top:8px">The Home page walks through Empathize, Define, Ideate, Prototype and Test. The Feedback page collects real user input.</p></div>
+<div class="card"><h3>Python Programming</h3><p class="muted" style="margin-top:8px">Flask handles every request in <code>app.py</code>. Functions and CRUD operations are in <code>app.py</code>, <code>database.py</code> and <code>stats_analysis.py</code>.</p></div>
+<div class="card"><h3>Web Technology</h3><p class="muted" style="margin-top:8px">HTML templates in <code>templates/</code>, one CSS file, and JavaScript files that call the Flask API with <code>fetch</code>. The layout is responsive.</p></div>
+<div class="card"><h3>Artificial Intelligence</h3><p class="muted" style="margin-top:8px"><code>ai/recommendation.py</code> ranks products using price, adjusted rating, specs, seller score and your priority, and gives reasons.</p></div>
+<div class="card"><h3>Probability &amp; Statistics</h3><p class="muted" style="margin-top:8px">Percentages, means, median, standard deviation, correlation and conditional probability, all calculated from database records.</p></div>
+<div class="card"><h3>Database (SQLite)</h3><p class="muted" style="margin-top:8px">Tables: products, shortlist, survey_responses, survey_difficulties, feedback and preferences, linked with foreign keys.</p></div>
+</div>
+
+<h3 style="margin-top:36px">Technology</h3>
+<p class="lead">Python 3 · Flask · SQLite · HTML · CSS · JavaScript. No chart library is used; the charts are drawn with plain JavaScript and SVG.</p>
+<p class="lead">B.E. Computer Engineering, J.G. University, Ahmedabad.</p>
+</div></section>
+{% endblock %}

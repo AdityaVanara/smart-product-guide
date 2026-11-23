@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}Smart Product Guide{% endblock %} | Online Shopping Product Selection Problem</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="{{ url_for('home') }}">Smart Product Guide</a>
+  {# the active page gets the "active" class #}
+  <a class="link-item {{ 'active' if page == 'home' }}" href="{{ url_for('home') }}">Home</a>
+  <a class="link-item {{ 'active' if page == 'products' }}" href="{{ url_for('products_page') }}">Products</a>
+  <a class="link-item {{ 'active' if page == 'comparison' }}" href="{{ url_for('comparison_page') }}">Compare</a>
+  <a class="link-item {{ 'active' if page == 'recommendations' }}" href="{{ url_for('recommendations_page') }}">AI picks</a>
+  <a class="link-item {{ 'active' if page == 'feedback' }}" href="{{ url_for('feedback_page') }}">Feedback</a>
+  <a class="link-item {{ 'active' if page == 'about' }}" href="{{ url_for('about_page') }}">About</a>
+</div></nav>
+
+{% block content %}{% endblock %}
+
+<footer><div class="wrap">· B.E. Computer Engineering, J.G. University, Ahmedabad · Products marked <b>Sample</b> use demo prices and ratings. They are not live marketplace data or real customer reviews.</div></footer>
+
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
